@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Layanan;
+use App\Models\Mobil;
 
-class LayananController extends Controller
+class MobilController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class LayananController extends Controller
     public function index()
     {
         $nomor = 1;
-        $lay = Layanan::all();
-        return view('page.layanan.index', compact('lay','nomor'));
+        $mo = Mobil::all();
+        return view('page.umobil.index', compact('mo','nomor'));
     }
 
     /**
@@ -26,8 +26,7 @@ class LayananController extends Controller
      */
     public function create()
     {
-    
-        return view('page.layanan.form');
+        return view('page.umobil.form');
     }
 
     /**
@@ -38,15 +37,13 @@ class LayananController extends Controller
      */
     public function store(Request $request)
     {
-        $lay = new Layanan;
+        $mo = new Mobil;
 
-        $lay->jenis_layanan = $request->jenis;
-        $lay->tarif = $request->tarif;
-        
-    
+        $mo->umobil = $request->mobil;
+       
+        $mo->save();
 
-        $lay->save();
-        return redirect('/layanan');
+        return redirect('/umobil');
     }
 
     /**
@@ -68,8 +65,8 @@ class LayananController extends Controller
      */
     public function edit($id)
     {
-        $lay = Layanan::find($id);
-        return view('page.layanan.edit', compact('lay'));
+        $mo = Mobil::find($id);
+        return view('page.Mobil.edit', compact('mo'));
     }
 
     /**
@@ -81,11 +78,13 @@ class LayananController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $lay = Layanan::find($id);
-        $lay->jenis_layanan = $request->jenis;
-        $lay->tarif = $request->tarif;
-        $lay->save();
-        return redirect('/layanan');
+        $mo = Mobil:: find($id);
+
+        $mo->umobil = $request->mobil;
+       
+        $mo->save();
+
+        return redirect('/umobil');
     }
 
     /**
@@ -96,11 +95,11 @@ class LayananController extends Controller
      */
     public function destroy($id)
     {
-        $lay = Layanan:: find($id);
+        $mo = Mobil:: find($id);
 
       
-        $lay->delete();
+        $mo->delete();
 
-        return redirect('/layanan');
+        return redirect('/umobil');
     }
 }

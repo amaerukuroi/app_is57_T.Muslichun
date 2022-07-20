@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('layanans', function (Blueprint $table) {
+        Schema::create('mobils', function (Blueprint $table) {
             $table->id();
-            $table->string('jenis_layanan');
-            $table->string('tarif');
+            $table->string('umobil');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('layanans');
+        Schema::dropIfExists('mobils');
     }
 };

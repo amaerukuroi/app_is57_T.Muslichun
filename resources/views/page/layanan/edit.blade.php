@@ -41,9 +41,10 @@
                     <input type="text" value="{{$lay->jenis_layanan}}" name="jenis" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Tarif</label>
-                    <input type="text" value="{{$lay->tarif}}" name="tarif" class="form-control" id="exampleInputPassword1">
-                </div>
+                  <label for="exampleInputEmail1" class="form-label">Tarif</label>
+                  <input type="text" value="{{$lay->tarif}}" name="tarif" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
+               
                 <button type="submit" class="btn btn-primary">Edit Data</button>
                 <a href="/layanan" class="btn btn-warning">Batal</a>
             </form>

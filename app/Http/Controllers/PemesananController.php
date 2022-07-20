@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pemesanan;
+use App\Models\Mobil;
 use App\Models\Layanan;
 
-class LayananController extends Controller
+class PemesananController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +17,8 @@ class LayananController extends Controller
     public function index()
     {
         $nomor = 1;
-        $lay = Layanan::all();
-        return view('page.layanan.index', compact('lay','nomor'));
+        $pem = Pemesanan::all();
+        return view('page.pemesanan.index',compact('pem','nomor'));
     }
 
     /**
@@ -26,8 +28,9 @@ class LayananController extends Controller
      */
     public function create()
     {
-    
-        return view('page.layanan.form');
+        $mo = Mobil::all();
+        $lay = Layanan::all();
+        return view('page.pemesanan.form',compact('lay','mo'));
     }
 
     /**
@@ -38,15 +41,15 @@ class LayananController extends Controller
      */
     public function store(Request $request)
     {
-        $lay = new Layanan;
+        $pem = new Pemesanan;
 
-        $lay->jenis_layanan = $request->jenis;
-        $lay->tarif = $request->tarif;
-        
-    
+        $pem->no_pemesanan = $request->no;
+        $pem->mobils_id = $request->mobil;
+        $pem->layanans_id = $request->layanan;
+        $pem->jadwal = $request->jadwal;
 
-        $lay->save();
-        return redirect('/layanan');
+        $pem->save();
+        return redirect('/pemesanan');
     }
 
     /**
@@ -68,8 +71,10 @@ class LayananController extends Controller
      */
     public function edit($id)
     {
-        $lay = Layanan::find($id);
-        return view('page.layanan.edit', compact('lay'));
+        $mo = Mobil::all();
+        $lay = Layanan::all();
+        $pem = Pemesanan::find($id);
+        return view('page.pemesanan.edit', compact('pem','mo','lay'));
     }
 
     /**
@@ -81,11 +86,15 @@ class LayananController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $lay = Layanan::find($id);
-        $lay->jenis_layanan = $request->jenis;
-        $lay->tarif = $request->tarif;
-        $lay->save();
-        return redirect('/layanan');
+        
+        $pem = Pemesanan::find($id);
+        $pem->no_pemesanan = $request->no;
+        $pem->mobils_id = $request->mobil;
+        $pem->layanans_id = $request->layanan;
+        $pem->jadwal = $request->jadwal;
+
+        $pem->save();
+        return redirect('/pemesanan');
     }
 
     /**
@@ -96,11 +105,11 @@ class LayananController extends Controller
      */
     public function destroy($id)
     {
-        $lay = Layanan:: find($id);
+        $pem = Pemesanan:: find($id);
 
       
-        $lay->delete();
+        $pem->delete();
 
-        return redirect('/layanan');
+        return redirect('/pemesanan');
     }
 }

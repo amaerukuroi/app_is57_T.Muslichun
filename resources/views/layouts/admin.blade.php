@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AdminLTE 3 | Dashboard</title>
 
+
+
+   {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> --}}
+   <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"> 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -248,9 +252,8 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item"> <a class="nav-link @yield('navkj')" aria-current="page" href="/pekerja"><span class="menu-title">Pekerja</span> </a></li>
+              <li class="nav-item"> <a class="nav-link @yield('navkj')" aria-current="page" href="/umobil"><span class="menu-title">Unit Mobil</span> </a></li>
               <li class="nav-item"> <a class="nav-link @yield('navlay')" aria-current="page" href="/layanan"><span class="menu-title">Layanan</span></a></li>
-              <li class="nav-item"> <a class="nav-link @yield('navpel')" aria-current="page" href="/pelanggan"><span class="menu-title">Pelanggan</span></a></li>
               <li class="nav-item"> <a class="nav-link @yield('navpem')" aria-current="page" href="/pemesanan"><span class="menu-title">Pemesanan</span></a></li>
             </ul>
           </li>
@@ -355,6 +358,7 @@ aria-hidden="true">
 <!-- Summernote -->
 <script src="{{asset ('plugins/summernote/summernote-bs4.min.js') }}"></script>
 <!-- overlayScrollbars -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="{{asset ('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset ('dist/js/adminlte.js') }}"></script>

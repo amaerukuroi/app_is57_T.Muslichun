@@ -38,6 +38,10 @@
                     <label for="exampleInputEmail1" class="form-label">Jenis layanan</label>
                     <input type="text" name="jenis" class="form-control">
                 </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Tarif</label>
+                  <input type="text" name="tarif" class="form-control">
+              </div>
               
                 <button type="submit" class="btn btn-primary">Tambah Data</button>
                 <a href="/layanan" class="btn btn-warning">Batal</a>

@@ -38,6 +38,7 @@
                     <tr>
                     <th scope="col">NO</th>
                     <th scope="col">NAMA LAYANAN</th>
+                    <th scope="col">TARIF</th>
                     <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -46,6 +47,7 @@
                         <tr>
                             <th scope="row">{{$nomor++}}</th>
                             <td>{{$item->jenis_layanan}}</td>
+                            <td>{{$item->tarif}}</td>
                             <td>
                                 <a href="/layanan/edit/{{$item->id}}" class="btn btn-success btn-sm">Edit</a>
                                 
@@ -57,11 +59,11 @@
                                   <div class="modal-dialog">
                                     <div class="modal-content">
                                       <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Peringatan</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                       </div>
                                       <div class="modal-body">
-                                          yakin Kelas {{$item->jenis_layanan}} ingin dihapus?
+                                          Yakin Anda ingin Menghapus Layanan {{$item->jenis_layanan}}.?
                                       </div>
                                       <div class="modal-footer">
                                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
