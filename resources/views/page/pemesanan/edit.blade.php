@@ -44,7 +44,7 @@
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Unit Mobil</label>
                     <select name="mobil" class="form-control">
-                        <option value="">-Pilih Unit Mobil-</option>
+                        <option value="{{$pem->mobils_id}}">{{$pem->mobils->umobil}}</option>
                         @foreach ($mo as $item)
                             <option value="{{$item->id}}">{{$item->umobil}}</option>  
                         @endforeach
@@ -53,7 +53,7 @@
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">LAYANAN</label>
                     <select name="layanan" class="form-control">
-                        <option value="">-Pilih Layanan-</option>
+                        <option value="{{$pem->layanans_id}}">{{$pem->layanans->jenis_layanan}}</option>
                         @foreach ($lay as $item)
                             <option value="{{$item->id}}">{{$item->jenis_layanan}}</option>  
                         @endforeach

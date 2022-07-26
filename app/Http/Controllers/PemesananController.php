@@ -73,7 +73,7 @@ class PemesananController extends Controller
     {
         $mo = Mobil::all();
         $lay = Layanan::all();
-        $pem = Pemesanan::find($id);
+        $pem = Pemesanan::with('layanans','mobils')->find($id);
         return view('page.pemesanan.edit', compact('pem','mo','lay'));
     }
 

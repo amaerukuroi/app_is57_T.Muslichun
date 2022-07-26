@@ -66,7 +66,7 @@ class MobilController extends Controller
     public function edit($id)
     {
         $mo = Mobil::find($id);
-        return view('page.Mobil.edit', compact('mo'));
+        return view('page.umobil.edit', compact('mo'));
     }
 
     /**
