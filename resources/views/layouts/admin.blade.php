@@ -213,8 +213,8 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item"> <a class="nav-link @yield('navkj')" aria-current="page" href="/umobil"><span class="menu-title">Unit Mobil</span> </a></li>
-              <li class="nav-item"> <a class="nav-link @yield('navlay')" aria-current="page" href="/layanan"><span class="menu-title">Layanan</span></a></li>
+              @can('create',App\Mobil::class) <li class="nav-item"> <a class="nav-link @yield('navmo')" aria-current="page" href="/umobil"><span class="menu-title">Unit Mobil</span> </a></li>  @endcan
+               <li class="nav-item"> <a class="nav-link @yield('navlay')" aria-current="page" href="/layanan"><span class="menu-title">Layanan</span></a></li> 
               <li class="nav-item"> <a class="nav-link @yield('navpem')" aria-current="page" href="/pemesanan"><span class="menu-title">Pemesanan</span></a></li>
             </ul>
           </li>

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title', 'Data umobil')
-@section('navkj', 'active')
+@section('navmo', 'active')
 
 @section('content')
 
@@ -15,7 +15,7 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
             <li class="breadcrumb-item active">Unit Mobil</li>
           </ol>
         </div><!-- /.col -->
@@ -53,46 +53,45 @@
                             <td>
                                 <a href="/umobil/edit/{{$item->id}}" class="btn btn-success btn-sm">Edit</a>
                                 
-                                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">Hapus</button>
-  
-                                <!-- Modal -->
-                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                  <div class="modal-dialog">
-                                    <div class="modal-content">
-                                      <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                      </div>
-                                      <div class="modal-body">
-                                          Yakin Anda Ingin Menghapus Unit Mobil {{$item->umobil}}.?
-                                      </div>
-                                      <div class="modal-footer">
-                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                          <form method="POST" action="/umobil/{{$item->id}}">
-                                          @csrf
-                                          @method ('DELETE')
-                                
-                                      <button type="submit" class="btn btn-primary ">Hapus</button>
-                                          </form>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                                                
-                                                                
-                                                                </td>
-                                                            </tr>
-                                                        
-                                                            @empty
-                                                        <tr>
-                                                            <td colspan="4">Belum Ada Data</td>
-                                                        </tr>
-                                                    @endforelse
-                                                    
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                                                                @endsection
+                                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#a{{$item->id}}">
+                                  Hapus
+                              </button>
+<div class="modal fade" id="a{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Peringatan</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      Yakin Data {{$item->umobil}} ingin dihapus...?
+    </div>
+       <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+      <form method="POST" action="/umobil/{{$item->id}}">
+      @csrf
+       @method ('DELETE')
+          
+      <button type="submit" class="btn btn-primary ">Hapus</button>
+</form>
+    </div>
+  </div>
+</div>
+</div>
+
+                          </td>
+                          
+                      </tr>
+                  @empty
+                      <tr>
+                          <td colspan="4">Belum Ada Data</td>
+                      </tr>
+                  @endforelse
+                  
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+</div>
+@endsection
